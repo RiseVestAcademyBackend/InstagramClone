@@ -1,0 +1,82 @@
+System Design For Social Media Platform ( Instagram/Twitter )
+-------
+-Basics
+User -> generic
+    -> admin ( staff )
+Post -> Tweet
+    -> Post
+Stories -> Reels
+Authentication/Autorization
+
+
+-Interactions
+
+Follow/Unfollow/Block
+Like 
+Share -> retweet/reshare
+Comments -> reply
+
+-Actions
+
+Search
+
+1 -  it's world cup final. argentina has won. Messi has made post. Messi has 90M followers.
+how do you ensure that this post gets to all his followers. 
+
+
+User
+ -> id (uuid -> )
+ -> name
+ -> username
+ -> email
+ -> mobile numbers*
+ -> password_hash 
+ -> created_at
+ -> pix
+ -> bio
+ -> location
+ -> link/website
+ -> role
+
+ Post
+  ->id 
+  -> user_id
+  -> content
+  -> created_at
+  -> modified_at*
+  -> media_url / image
+  -> Like_count
+  -> share/retweet_count
+  -> bookmarks_count
+  -> view_count
+
+Like
+-> id 
+-> user_id
+-> post_id
+-> created_at
+
+Share
+-> id
+-> post_id
+-> post_shared_by_id
+-> created_at
+
+Follow
+-> follower_id
+-> followee_id
+-> created_at
+
+Comment/reply
+
+-> id 
+-> user_id
+-> post_id
+-> pinpoint_id ( what is being replied )
+-> created_at
+
+
+
+MiddleWare
+
+---> it will run before the action you want to perform runs
